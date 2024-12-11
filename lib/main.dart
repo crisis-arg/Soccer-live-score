@@ -26,6 +26,22 @@ class SoccerApp extends StatefulWidget {
 class _SoccerAppState extends State<SoccerApp> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: Color(0xFFFAFAFA),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFFAFAFA),
+        elevation: 0.0,
+        title: Text(
+          "SOCCERBOARD",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        centerTitle: true,
+      ),
+
+      //
+      // body:FutureBuilder(future: future, builder: builder) ,
+    );
   }
 }
