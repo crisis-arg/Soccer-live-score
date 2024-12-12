@@ -5,12 +5,12 @@ class SoccerMatch {
   Goal goal;
   SoccerMatch(this.fixture, this.home, this.away, this.goal);
 
-  factory SoccerMatch.fromJason(Map<String, dynamic> jason) {
+  factory SoccerMatch.fromjson(Map<String, dynamic> jason) {
     return SoccerMatch(
-      Fixture.fromJason(jason['fixture']),
-      Team.fromJason(jason['teams']['home']),
-      Team.fromJason(jason['teams']['away']),
-      Goal.fromJason(jason['goals']),
+      Fixture.fromjson(jason['fixture']),
+      Team.fromjson(jason['teams']['home']),
+      Team.fromjson(jason['teams']['away']),
+      Goal.fromjson(jason['goals']),
     );
   }
 }
@@ -21,11 +21,11 @@ class Fixture {
   int date;
   Status status;
   Fixture(this.id, this.date, this.status);
-  factory Fixture.fromJason(Map<String, dynamic> jason) {
+  factory Fixture.fromjson(Map<String, dynamic> jason) {
     return Fixture(
       jason['id'],
       jason['date'],
-      Status.fromJason(jason['status']),
+      Status.fromjson(jason['status']),
     );
   }
 }
@@ -35,7 +35,7 @@ class Status {
   int elapsed;
   String long;
   Status(this.elapsed, this.long);
-  factory Status.fromJason(Map<String, dynamic> jason) {
+  factory Status.fromjson(Map<String, dynamic> jason) {
     return Status(
       jason['elapsed'],
       jason['long'],
@@ -50,7 +50,7 @@ class Team {
   String logoUrl;
   bool winner;
   Team(this.id, this.name, this.logoUrl, this.winner);
-  factory Team.fromJason(Map<String, dynamic> jason) {
+  factory Team.fromjson(Map<String, dynamic> jason) {
     return Team(
       jason['id'],
       jason['name'],
@@ -65,7 +65,7 @@ class Goal {
   int home;
   int away;
   Goal(this.home, this.away);
-  factory Goal.fromJason(Map<String, dynamic> jason) {
+  factory Goal.fromjson(Map<String, dynamic> jason) {
     return Goal(
       jason['home'],
       jason['away'],
