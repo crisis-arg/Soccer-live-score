@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:soccer_live_score/api_manager.dart';
+import 'package:soccer_live_score/pagebody.dart';
+import 'package:soccer_live_score/soccer_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +44,22 @@ class _SoccerAppState extends State<SoccerApp> {
       ),
 
       //
-      // body:FutureBuilder(future: future, builder: builder) ,
+      body: FutureBuilder(
+        future: SoccerApi().getAllMatches(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasData && snapshot.data != null) {
+            return pageBody(snapshot.data as List<SoccerMatch>);
+          } else {
+            return Center(
+              child: Text('no matches found'),
+            );
+          }
+        },
+      ),
     );
   }
 }
