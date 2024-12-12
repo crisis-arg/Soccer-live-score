@@ -21,7 +21,7 @@ class SoccerApi {
       print("Api service: ${body}");
        //to debug
       List<SoccerMatch> matches = matchesList
-          .map((dynamic item) => SoccerMatch.fromjson(item))
+          .map((dynamic item) => SoccerMatch.fromJson(item))
           .toList();
           print("Sample item from matchesList: ${matchesList[0]}");
       return matches;
