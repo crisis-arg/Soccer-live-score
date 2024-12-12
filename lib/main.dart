@@ -52,7 +52,13 @@ class _SoccerAppState extends State<SoccerApp> {
               child: CircularProgressIndicator(),
             );
           } else if (snapshot.hasData && snapshot.data != null) {
-            return pageBody(snapshot.data as List<SoccerMatch>);
+            final matches = snapshot.data as List<SoccerMatch>;
+            if (matches.isEmpty) {
+              return Center(
+                child: Text('No matches found.'),
+              );
+            }
+            return PageBody(matches);
           } else {
             return Center(
               child: Text('no matches found'),

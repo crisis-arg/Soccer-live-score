@@ -17,7 +17,7 @@ class SoccerApi {
     if (res.statusCode == 200) {
       //connected to the server
       body = jsonDecode(res.body);
-      List<dynamic> matchesList = body['response'];
+      List<dynamic> matchesList = body["response"];
       print("Api service: ${body}"); //to debug
       List<SoccerMatch> matches = matchesList
           .map((dynamic item) => SoccerMatch.fromjson(item))
