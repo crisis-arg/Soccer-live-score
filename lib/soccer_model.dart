@@ -7,10 +7,10 @@ class SoccerMatch {
 
   factory SoccerMatch.fromjson(Map<String, dynamic> jason) {
     return SoccerMatch(
-      Fixture.fromjson(jason["fixture"]),
-      Team.fromjson(jason["teams"]["home"]),
-      Team.fromjson(jason["teams"]["away"]),
-      Goal.fromjson(jason["goals"]),
+      Fixture.fromjson(jason['fixture']),
+      Team.fromjson(jason['teams']['home']),
+      Team.fromjson(jason['teams']['away']),
+      Goal.fromjson(jason['goals']),
     );
   }
 }
@@ -23,9 +23,9 @@ class Fixture {
   Fixture(this.id, this.date, this.status);
   factory Fixture.fromjson(Map<String, dynamic> jason) {
     return Fixture(
-      jason["id"],
-      jason["date"],
-      Status.fromjson(jason["status"]),
+      jason['id'],
+      jason['date'],
+      Status.fromjson(jason['status']),
     );
   }
 }
@@ -37,8 +37,8 @@ class Status {
   Status(this.elapsed, this.long);
   factory Status.fromjson(Map<String, dynamic> jason) {
     return Status(
-      jason["elapsed"],
-      jason["long"],
+      jason['elapsed'],
+      jason['long'],
     );
   }
 }
@@ -52,10 +52,10 @@ class Team {
   Team(this.id, this.name, this.logoUrl, this.winner);
   factory Team.fromjson(Map<String, dynamic> jason) {
     return Team(
-      jason["id"],
-      jason["name"],
-      jason["logo"],
-      jason["winner"],
+      jason['id'],
+      jason['name'],
+      jason['logo'],
+      jason['winner'],
     );
   }
 }
@@ -67,8 +67,8 @@ class Goal {
   Goal(this.home, this.away);
   factory Goal.fromjson(Map<String, dynamic> jason) {
     return Goal(
-      jason["home"],
-      jason["away"],
+      jason['home'],
+      jason['away'],
     );
   }
 }

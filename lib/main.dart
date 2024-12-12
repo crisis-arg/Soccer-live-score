@@ -26,7 +26,7 @@ class SoccerApp extends StatefulWidget {
   State<SoccerApp> createState() => _SoccerAppState();
 }
 
-class _SoccerAppState extends State<SoccerApp> {
+class _SoccerAppState extends State<SoccerApp>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class _SoccerAppState extends State<SoccerApp> {
 
       //
       body: FutureBuilder(
-        future: SoccerApi().getAllMatches(),
+        future:  SoccerApi().getAllMatches(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
