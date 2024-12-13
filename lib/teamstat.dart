@@ -11,7 +11,7 @@ Widget teamStat(
         Text(
           team,
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: 18.0,
           ),
         ),
         SizedBox(
@@ -28,6 +28,7 @@ Widget teamStat(
         ),
         Text(
           teamName,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 18.0,
           ),

@@ -4,10 +4,10 @@ import 'package:soccer_live_score/soccer_model.dart';
 
 class SoccerApi {
   final apiUrl = Uri.parse(
-      "https://v3.football.api-sports.io/fixtures?season=2020&league=39");
+      "https://v3.football.api-sports.io/fixtures?live=all");
   static const header = {
     'x-rapidapi-host': "v3.football.api-sports.io",
-    'x-rapidapi-key': "79944227b1a9249ce33e81f3ecd43c49",
+    'x-rapidapi-key': "",
   };
 
   Future<List<SoccerMatch>> getAllMatches() async {
